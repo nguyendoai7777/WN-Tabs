@@ -19,6 +19,9 @@ Array.from($$('.mat-tab-group')).forEach((root, rootIndex) => {
   const tabList = $$(`#${id} .mat-tab-item`);
   const arrayTabList = Array.from(tabList);
   const tabActiveIndex = root.getAttribute('tabActiveIndex');
+  const tabBodyNodes = $(`#${id} .tab-translate`);
+  const tabBodyItemNode =  $$(`#${id} .tab-body-content`);
+  const arrayTabBodyItemList = Array.from(tabBodyItemNode);
 
   if(arrayTabList.length < 2) {
     console.error(`When use Tabs view, you must provide more than one tab item, Exceptions at:
@@ -52,9 +55,24 @@ Array.from($$('.mat-tab-group')).forEach((root, rootIndex) => {
     inkBar.style.width = tabList[order].getBoundingClientRect().width + 'px';
     inkBar.style.left = arrayTabList[order].offsetLeft + 'px';
     arrayTabList[order].classList.add('active');
-  };
+    const offsetLeft = arrayTabBodyItemList[order].offsetLeft;
+    tabBodyNodes.style.transform = `translateX(-${offsetLeft}px)`;
+    const tTransition = setTimeout(() => {
+      tabBodyNodes.style.transition = `.3s`;
+      clearTimeout(tTransition);
+    }, 500);
 
+  };
   setActiveDefault(tabActive);
+  let previosTabIndex = tabActive;
+  const onTabChange = (parentId, tabId, tabName) => {
+    const translateSpacing = arrayTabBodyItemList[tabActive].getBoundingClientRect().width * tabId;
+    let translateParam = '';
+    translateParam = `-${translateSpacing}px`;
+    tabBodyNodes.style.transform = `translateX(${translateParam})`;
+    previosTabIndex = tabId;
+  }
+
   arrayTabList.forEach((el, index) => {
     el.addEventListener('click', () => {
       arrayTabList.forEach((e) => {
@@ -67,6 +85,9 @@ Array.from($$('.mat-tab-group')).forEach((root, rootIndex) => {
         left: tabList[index].offsetLeft,
         width: tabList[index].getBoundingClientRect().width,
       });
+      onTabChange(id, index, el.textContent);
     });
   });
 });
+
+

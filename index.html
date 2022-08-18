@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,35 +9,39 @@
   <link rel="stylesheet" href="./style.css">
   <script src="./app.js" defer></script>
 </head>
+
 <body>
 
   <div style="width: 200px; background-color: deeppink; height: 60px"></div>
   <div class="m-auto">
-    <div class="mat-tab-group" id="group1" tabActiveIndex="2">
-      <div class="mat-tab-root">
-        <div class="mat-tab-item">Home</div>
-        <div class="mat-tab-item">About</div>
-        <div class="mat-tab-item">Work</div>
-        <div class="mat-tab-item">Contact</div>
-        <div class="mat-tab-item"> Production Mode</div>
+    <div class="tab-container">
+      <div class="mat-tab-group" id="group1" tabActiveIndex="2">
+        <div class="mat-tab-header">
+          <div class="mat-tab-root">
+            <div class="mat-tab-item">Home</div>
+            <div class="mat-tab-item">About</div>
+            <div class="mat-tab-item">Work</div>
+            <div class="mat-tab-item">Contact</div>
+            <div class="mat-tab-item"> Production Mode</div>
+          </div>
+          <div class="mat-ink-bar"></div>
+        </div>
+        <div class="tab-body">
+          <div class="tab-translate">
+            <div class="tab-body-content">1</div>
+            <div class="tab-body-content">2</div>
+            <div class="tab-body-content">3</div>
+            <div class="tab-body-content">4</div>
+            <div class="tab-body-content">5</div>
+          </div>
+        </div>
       </div>
-      <div class="mat-ink-bar"></div>
+
     </div>
   </div>
 
-  <div style="width: 200px; background-color: deeppink; height: 60px"></div>
-  <div class="m-auto">
-    <div class="mat-tab-group" id="heheh" tabActiveIndex="1">
-      <div class="mat-tab-root">
-        <div class="mat-tab-item">Home</div>
-        <div class="mat-tab-item">About</div>
-        <div class="mat-tab-item">Work</div>
-        <div class="mat-tab-item">Contact</div>
-        <div class="mat-tab-item"> Production Mode</div>
-      </div>
-      <div class="mat-ink-bar"></div>
-    </div>
-  </div>
+
 
 </body>
+
 </html>

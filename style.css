@@ -1,94 +1,4 @@
-html {
-  box-sizing: border-box;
-}
-* {
-  margin: 0;
-  padding: 0;
-}
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-input,
-textarea,
-select,
-button {
-  outline: none;
-}
-input {
-  line-height: normal;
-}
-label,
-button {
-  cursor: pointer;
-}
-a {
-  text-decoration: none;
-}
-img {
-  display: block;
-  max-width: 100%;
-}
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-/* using rem unit */
-html {
-  font-size: 62.5%;
-}
-a {
-  text-decoration: none;
-}
-img {
-  display: block;
-  max-width: 100%;
-}
-body {
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  line-height: 1;
-}
-.menu {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  list-style: none;
-  margin: 50px auto;
-}
-.menu-item {
-  margin: 0 25px;
-}
-.menu-link {
-  display: inline-block;
-  position: relative;
-  padding: 5px 12px;
-}
-.line-effect {
-  width: 0;
-  height: 2px;
-  background-color: #7C3AED;
-  position: fixed;
-  pointer-events: none;
-  transition: all 0.25s cubic-bezier(.1,.74,.52,.25);
-}
-/* .menu-link:before {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #3d6ef7;
-  opacity: 0;
-  visibility: hidden;
-}
-.menu-link:hover:before {
-  opacity: 1;
-  visibility: visible;
-} */
+
 
 
 @media (prefers-color-scheme: dark) {
@@ -103,12 +13,14 @@ body {
 
 .m-auto {
   display: flex;
-  justify-content: center;
 }
 
-.mat-tab-group {
+.mat-tab-header {
   position: relative;
   width: fit-content;
+  border: 1px solid #c1c1c159;
+  border-radius: 8px 8px 0 0 ;
+  overflow: hidden;
 }
 
 .mat-tab-root {
@@ -132,5 +44,30 @@ body {
   background-color: deeppink;
   bottom: 0;
    /* transition: 500ms cubic-bezier(0.35, 0, 0.25, 1); */
-  transition: all 500ms cubic-bezier(.49,.01,1,.52);
+  transition: all 500ms cubic-bezier(0.35, 0, 0.25, 1);
 }
+
+.tab-body {
+  border-left: 1px solid #c1c1c159;
+  border-bottom: 1px solid #c1c1c159;
+  border-right: 1px solid #c1c1c159;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  padding: 10px;
+}
+.tab-body * {
+  background-color: unset;
+
+}
+.tab-translate {
+  display: flex;
+}
+.tab-body-content {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 100%;
+  width: inherit;
+  padding: 10px;
+  min-height: 400px;
+}
+
